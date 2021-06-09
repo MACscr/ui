@@ -23,6 +23,10 @@ class UIProvider extends ServiceProvider
             ]);
         }
 
+        $this->publishes([
+            __DIR__.'/../config/ui.php' => config_path('ui.php'),
+        ]);
+        
         $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
 
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'ui');
